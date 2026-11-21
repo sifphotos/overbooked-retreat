@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Overbooked Retreat at Cloudland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600;1,9..144,700&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one blush column, sticker-style cards with a hard ink shadow, same look as the Overbooked flyer */
+:root {
+  --blush: #FDECEE;
+  --pink: #F9CFD8;
+  --pink-soft: #F3B3C2;
+  --wine: #8C1C3A;
+  --lav: #E6DCF5;
+  --plum: #4F2E86;
+  --butter: #FFE29A;
+  --ink: #2A1520;
+  --muted: #5C3A47;
+  --paper: #FFFFFF;
+  --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --hand: 'Caveat', 'Bradley Hand', 'Segoe Print', cursive;
+  --body: 'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--blush);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 36px 56px;
+}
+.wrap { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+a { color: var(--wine); }
+a:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; border-radius: 6px; }
+.hand { font-family: var(--hand); font-weight: 700; line-height: 1.05; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 32px; align-items: center; }
+.hero-copy { display: flex; flex-direction: column; gap: 12px; position: relative; }
+.eyebrow { font-size: 30px; color: var(--wine); }
+.hero h1 { font-family: var(--display); font-weight: 800; font-size: clamp(42px, 7vw, 66px); line-height: 1.02; letter-spacing: -0.02em; }
+.hero h1 em { font-style: italic; font-weight: 700; color: var(--wine); background: linear-gradient(transparent 62%, var(--butter) 62%); padding: 0 4px; }
+.lede { font-size: 18px; color: var(--muted); max-width: 34em; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.pill { background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; padding: 5px 14px; font-size: 14px; font-weight: 600; }
+.pill.butter { background: var(--butter); }
+.pill.pink { background: var(--pink); }
+.hero-photo { position: relative; }
+.hero-photo img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 2px solid var(--ink); border-radius: 24px; box-shadow: 6px 6px 0 var(--ink); transform: rotate(1.5deg); }
+.hero-photo .tag { position: absolute; left: -10px; bottom: -14px; background: var(--wine); color: #FFF5F7; font-size: 24px; padding: 4px 16px 6px; border-radius: 999px; transform: rotate(-4deg); }
+.doodles { position: absolute; top: -26px; right: -6px; pointer-events: none; }
+
+/* notice */
+.notice { background: var(--butter); border: 2px solid var(--ink); border-radius: 22px; box-shadow: 6px 6px 0 var(--ink); padding: 22px 26px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: start; }
+.notice svg { margin-top: 4px; }
+.notice h2 { font-family: var(--display); font-weight: 800; font-size: 26px; line-height: 1.15; margin-bottom: 6px; }
+.notice p { color: var(--ink); max-width: 62em; }
+.notice p + p { margin-top: 8px; font-size: 14px; color: var(--muted); }
+
+/* section heads */
+.section { display: flex; flex-direction: column; gap: 20px; }
+.section-head { display: flex; flex-direction: column; gap: 4px; }
+.section-head .hand { font-size: 26px; color: var(--wine); }
+.section-head h2 { font-family: var(--display); font-weight: 800; font-size: clamp(30px, 4.4vw, 40px); line-height: 1.08; letter-spacing: -0.01em; }
+.section-head p { color: var(--muted); max-width: 40em; }
+
+/* weekends */
+.weekends { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.weekend { border: 2px solid var(--ink); border-radius: 24px; box-shadow: 6px 6px 0 var(--ink); padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+.weekend.a { background: var(--pink); }
+.weekend.b { background: var(--lav); }
+.weekend .badge { align-self: flex-start; color: #FFF; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
+.weekend.a .badge { background: var(--wine); transform: rotate(-3deg); }
+.weekend.b .badge { background: var(--plum); transform: rotate(3deg); }
+.weekend h3 { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: 1.1; }
+.weekend .sub { color: var(--muted); font-size: 15px; }
+.weekend .from { background: var(--paper); border-radius: 16px; padding: 12px 16px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; }
+.weekend .from strong { font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 1; }
+.weekend.a .from strong { color: var(--wine); }
+.weekend.b .from strong { color: var(--plum); }
+.weekend .from span { font-size: 14px; color: var(--muted); }
+.splits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.split { background: var(--paper); border: 2px solid var(--ink); border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.split .lbl { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.split strong { font-family: var(--display); font-weight: 800; font-size: 34px; line-height: 1.05; }
+.weekend.a .split strong { color: var(--wine); }
+.weekend.b .split strong { color: var(--plum); }
+.split .sm { font-size: 13px; color: var(--muted); }
+.split .sm .sm-b { font-family: var(--body); font-size: 13px; font-weight: 700; line-height: 1.35; color: var(--ink); }
+.split.hl { background: var(--butter); }
+@media (max-width: 380px) { .splits { grid-template-columns: minmax(0, 1fr); } }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 18px; border: 2px solid var(--ink); border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; color: var(--ink); background: var(--paper); box-shadow: 3px 3px 0 var(--ink); transition: transform .12s ease, box-shadow .12s ease; }
+.btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
+.btn.solid { background: var(--ink); color: #FFF5F7; }
+.note { font-size: 14px; color: var(--muted); }
+
+/* rooms */
+.rooms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.room { background: var(--paper); border: 2px solid var(--ink); border-radius: 22px; box-shadow: 5px 5px 0 var(--ink); overflow: hidden; display: flex; flex-direction: column; }
+.room img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-bottom: 2px solid var(--ink); }
+.room-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.room-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 26px; }
+.room .vibe { font-size: 22px; color: var(--wine); }
+.room .flag { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; background: var(--butter); border: 1.5px solid var(--ink); white-space: nowrap; }
+.room h3 { font-family: var(--display); font-weight: 800; font-size: 21px; line-height: 1.15; }
+.room .feats { display: flex; flex-wrap: wrap; gap: 6px; }
+.room .feats span { font-size: 13px; background: var(--blush); border-radius: 999px; padding: 3px 10px; }
+.prices { margin-top: auto; border-top: 2px dashed var(--pink-soft); padding-top: 12px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; font-size: 14px; }
+.prices dt { color: var(--muted); }
+.prices dd { margin: 0; text-align: right; font-weight: 600; }
+.prices .big dt { color: var(--ink); font-weight: 600; font-size: 15px; align-self: end; }
+.prices .big dd { font-family: var(--display); font-weight: 800; font-size: 28px; line-height: 1; color: var(--wine); }
+.prices > div { display: contents; }
+
+/* solo */
+.solo { background: var(--lav); border: 2px solid var(--ink); border-radius: 24px; box-shadow: 6px 6px 0 var(--ink); padding: 26px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; align-items: center; }
+.solo h2 { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 4vw, 36px); line-height: 1.1; }
+.solo .hand { font-size: 26px; color: var(--plum); }
+.solo p { color: var(--muted); }
+.solo-copy { display: flex; flex-direction: column; gap: 10px; }
+.solo-table { background: var(--paper); border-radius: 18px; padding: 8px 18px; }
+.solo-table table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.solo-table th, .solo-table td { padding: 10px 0; border-bottom: 1.5px solid var(--lav); text-align: left; }
+.solo-table tr:last-child td { border-bottom: 0; }
+.solo-table th { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.solo-table td:last-child, .solo-table th:last-child { text-align: right; }
+.solo-table td:last-child { font-family: var(--display); font-weight: 800; font-size: 20px; color: var(--plum); }
+
+/* fine print */
+.fine { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.fine-card { background: var(--paper); border: 2px solid var(--ink); border-radius: 20px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.fine-card h3 { font-family: var(--display); font-weight: 800; font-size: 20px; }
+.fine-card ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
+.fine-card li::marker { color: var(--wine); }
+.fine-card p { font-size: 15px; }
+
+footer { text-align: center; display: flex; flex-direction: column; gap: 6px; align-items: center; }
+footer .hand { font-size: 34px; color: var(--wine); }
+footer p { font-size: 13px; color: var(--muted); max-width: 46em; }
+
+@media (max-width: 900px) {
+  .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fine { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .hero, .weekends, .solo { grid-template-columns: minmax(0, 1fr); }
+  .hero-photo { order: -1; }
+  .doodles { display: none; }
+  .notice { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .rooms { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+  .btn:hover { transform: none; }
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-copy">
+      <svg class="doodles" width="120" height="90" viewBox="0 0 120 90" aria-hidden="true">
+        <g transform="translate(58 4) rotate(12) scale(2.8)" fill="none" stroke="#8C1C3A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7.7 6.5h8.6l-.5 2.6a3.9 3.9 0 0 1-7.6 0z" fill="#E2557F" stroke="none"></path>
+          <path d="M7 2h10l-1 7a4 4 0 0 1-8 0z"></path><path d="M12 13v7"></path><path d="M8.5 21h7"></path>
+        </g>
+        <path transform="translate(14 10) scale(1)" d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z" fill="#E2557F"></path>
+        <path transform="translate(26 54) scale(0.8)" d="M12 2l2 7 7 3-7 3-2 7-2-7-7-3 7-3z" fill="#FFD166"></path>
+      </svg>
+      <span class="hand eyebrow">Overbooked's 1st annual retreat</span>
+      <h1>We're going to <em>Cloudland!</em></h1>
+      <p class="lede">The votes are in. We're heading to Cloudland at McLemore, a clifftop resort on Lookout Mountain, GA. Here's everything you need to pick your weekend, pick your room, and book.</p>
+      <div class="pills">
+        <span class="pill">Fri–Sun, 2 nights</span>
+        <span class="pill butter">About 2 hrs from ATL</span>
+        <span class="pill pink">Wine: still mandatory</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="https://www.hilton.com/im/en/ATLOKQQ/21971967/cloudland-hotel-mclemore-summer-exterior-9-large-161-photography.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Cloudland at McLemore resort building on the edge of Lookout Mountain at sunset">
+      <span class="hand tag">Cloudland, baby</span>
+    </div>
+  </header>
+
+  <aside class="notice" aria-labelledby="notice-title">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2A1520" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5"></path><path d="M5 9.5V20h14V9.5"></path><path d="M10 20v-5h4v5"></path></svg>
+    <div>
+      <h2 id="notice-title">Heads up: everyone books her own room</h2>
+      <p>Nobody is collecting money or booking for the group. We're doing 2 to a room, so grab your roommate, pick a room below, and one of you books it straight with Hilton using the links on this page. This page is just here to make that easy.</p>
+      <p>Prices were checked on Hilton.com on November 21, 2026 and can change at any time. The hotel sets the final price when you book.</p>
+    </div>
+  </aside>
+
+  <section class="section" aria-labelledby="weekends-title">
+    <div class="section-head">
+      <span class="hand">step one</span>
+      <h2 id="weekends-title">Pick your weekend</h2>
+      <p>Both weekends were priced exactly the same on November 21, so go with whichever one works for your calendar. The buttons open Hilton with your dates already filled in.</p>
+    </div>
+    <div class="weekends">
+      <article class="weekend a">
+        <span class="badge">Weekend 1</span>
+        <div>
+          <h3>Jan 15–17, 2027</h3>
+          <p class="sub">Friday check-in, Sunday check-out</p>
+        </div>
+        <div class="from"><strong class="num">$533</strong><span>a night per room, before taxes</span></div>
+        <div class="splits num">
+          <div class="split"><span class="lbl">Room total from</span><strong>$1,245</strong><span class="sm">2 nights, taxes in</span></div>
+          <div class="split hl"><span class="lbl">Per person from</span><strong>$622</strong><span class="sm"><strong class="sm-b">(per person, splitting a room with 2 people)</strong></span></div>
+        </div>
+        <div class="btns">
+          <a class="btn solid" href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=ATLOKQQ&amp;arrivalDate=2027-01-15&amp;departureDate=2027-01-17&amp;room1NumAdults=2" target="_blank" rel="noopener">Book Jan 15–17 for 2</a>
+        </div>
+        <p class="note">Cheapest room shown. Sale rate is free to cancel until Jan 1, 2027.</p>
+      </article>
+      <article class="weekend b">
+        <span class="badge">Weekend 2</span>
+        <div>
+          <h3>Jan 22–24, 2027</h3>
+          <p class="sub">Friday check-in, Sunday check-out</p>
+        </div>
+        <div class="from"><strong class="num">$533</strong><span>a night per room, before taxes</span></div>
+        <div class="splits num">
+          <div class="split"><span class="lbl">Room total from</span><strong>$1,245</strong><span class="sm">2 nights, taxes in</span></div>
+          <div class="split hl"><span class="lbl">Per person from</span><strong>$622</strong><span class="sm"><strong class="sm-b">(per person, splitting a room with 2 people)</strong></span></div>
+        </div>
+        <div class="btns">
+          <a class="btn solid" href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=ATLOKQQ&amp;arrivalDate=2027-01-22&amp;departureDate=2027-01-24&amp;room1NumAdults=2" target="_blank" rel="noopener">Book Jan 22–24 for 2</a>
+        </div>
+        <p class="note">Cheapest room shown. Sale rate is free to cancel until Jan 8, 2027.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="rooms-title">
+    <div class="section-head">
+      <span class="hand">step two</span>
+      <h2 id="rooms-title">Pick your room</h2>
+      <p>Prices are the same for either weekend. "Total" is the whole 2-night stay for one room with the resort charge and taxes added in. "Each" is that total split between 2 roommates.</p>
+    </div>
+    <div class="rooms">
+
+      <article class="room">
+        <img src="https://www.hilton.com/im/en/ATLOKQQ/20842835/atlokqq-traditional-fairway-2-qn-02.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with two queen beds and a view of the golf course" loading="lazy">
+        <div class="room-body">
+          <div class="room-top"><span class="hand vibe">everybody gets a bed</span><span class="flag">Best value</span></div>
+          <h3>2 Queen Beds, Resort View</h3>
+          <div class="feats"><span>Two queens</span><span>Golf view</span><span>Mini fridge</span></div>
+          <dl class="prices num">
+            <div><dt>Per night</dt><dd>$533</dd></div>
+            <div><dt>Total, 2 nights</dt><dd>$1,245</dd></div>
+            <div class="big"><dt>Each, split 2 ways</dt><dd>$622</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="room">
+        <img src="https://www.hilton.com/im/en/ATLOKQQ/20842842/atlokqq-traditional-fairway-1-king-01.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with one king bed and a view of the golf course" loading="lazy">
+        <div class="room-body">
+          <div class="room-top"><span class="hand vibe">sleepover energy</span><span class="flag">Best value</span></div>
+          <h3>1 King Bed, Resort View</h3>
+          <div class="feats"><span>One king</span><span>Golf view</span><span>Mini fridge</span></div>
+          <dl class="prices num">
+            <div><dt>Per night</dt><dd>$533</dd></div>
+            <div><dt>Total, 2 nights</dt><dd>$1,245</dd></div>
+            <div class="big"><dt>Each, split 2 ways</dt><dd>$622</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="room">
+        <img src="https://www.hilton.com/im/en/ATLOKQQ/23448419/atlokqq-superior-mtn-vistas-2-qn-02.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with two queen beds and big windows facing the mountains" loading="lazy">
+        <div class="room-body">
+          <div class="room-top"><span class="hand vibe">two beds, big views</span></div>
+          <h3>2 Queen Beds, Superior Mountain View</h3>
+          <div class="feats"><span>Two queens</span><span>Mountain view</span></div>
+          <dl class="prices num">
+            <div><dt>Per night</dt><dd>$573</dd></div>
+            <div><dt>Total, 2 nights</dt><dd>about $1,338</dd></div>
+            <div class="big"><dt>Each, split 2 ways</dt><dd>$669</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="room">
+        <img src="https://www.hilton.com/im/en/ATLOKQQ/22164412/cloudland-hotel-mclemore-guest-room-2-by-161-photography.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with one king bed facing the mountain view" loading="lazy">
+        <div class="room-body">
+          <div class="room-top"><span class="hand vibe">wake up to the valley</span></div>
+          <h3>1 King Bed, Superior Mountain View</h3>
+          <div class="feats"><span>One king</span><span>Mountain view</span></div>
+          <dl class="prices num">
+            <div><dt>Per night</dt><dd>$573</dd></div>
+            <div><dt>Total, 2 nights</dt><dd>about $1,338</dd></div>
+            <div class="big"><dt>Each, split 2 ways</dt><dd>$669</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="room">
+        <img src="https://www.hilton.com/im/en/ATLOKQQ/20844093/atlokqq-dlx-balcony-fairway-1-king-01.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with one king bed and a private balcony over the golf course" loading="lazy">
+        <div class="room-body">
+          <div class="room-top"><span class="hand vibe">wine on the balcony</span></div>
+          <h3>1 King Bed, Resort View with Balcony</h3>
+          <div class="feats"><span>One king</span><span>Balcony</span><span>Golf view</span></div>
+          <dl class="prices num">
+            <div><dt>Per night</dt><dd>$573</dd></div>
+            <div><dt>Total, 2 nights</dt><dd>about $1,338</dd></div>
+            <div class="big"><dt>Each, split 2 ways</dt><dd>$669</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="room">
+        <img src="https://www.hilton.com/im/en/ATLOKQQ/20842248/atlokqq-king-superior-balcony-mtn-view.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with one king bed and a balcony looking out at the mountains" loading="lazy">
+        <div class="room-body">
+          <div class="room-top"><span class="hand vibe">main character suite-ish</span><span class="flag">Splurge</span></div>
+          <h3>1 King, Superior Mountain View with Balcony</h3>
+          <div class="feats"><span>One king</span><span>Balcony</span><span>Mountain view</span></div>
+          <dl class="prices num">
+            <div><dt>Per night</dt><dd>$613</dd></div>
+            <div><dt>Total, 2 nights</dt><dd>about $1,430</dd></div>
+            <div class="big"><dt>Each, split 2 ways</dt><dd>$715</dd></div>
+          </dl>
+        </div>
+      </article>
+
+    </div>
+    <p class="note">The 2 Queen Beds with Balcony room was already sold out for Jan 15–17 when we checked. Accessible versions of these rooms are also available at similar prices on Hilton.com.</p>
+  </section>
+
+  <section class="section" aria-labelledby="fine-title">
+    <div class="section-head">
+      <span class="hand">the fine print, but cute</span>
+      <h2 id="fine-title">Before you book</h2>
+    </div>
+    <div class="fine">
+      <div class="fine-card">
+        <h3>Join Hilton Honors first</h3>
+        <p>The prices above are the Hilton Sale rate, about 20% off. It needs a free Hilton Honors account, so sign up before you book. You can still cancel up to 14 days before check-in.</p>
+        <p>Without an account, the regular flexible rate was $654 a night (about $1,525 per room, or $763 each).</p>
+      </div>
+      <div class="fine-card">
+        <h3>What's in the price</h3>
+        <ul>
+          <li>The $45 nightly resort charge</li>
+          <li>Taxes and fees: 16% plus $5 a night</li>
+          <li>Not parking or meals</li>
+        </ul>
+        <p>Hilton's checkout page shows your exact total before you pay.</p>
+      </div>
+      <div class="fine-card">
+        <h3>The resort charge gets you</h3>
+        <ul>
+          <li>2 signature cocktails every evening at The Pocket Cafe</li>
+          <li>Library access and stargazing gear</li>
+          <li>Bikes, tennis and pickleball, Wi-Fi</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="hand">see you on the mountain, ladies</span>
+    <p>Prices checked on Hilton.com on November 21, 2026 for 2 adults per room. Rates, availability and taxes are set by the hotel and can change at any time. Room photos from Hilton.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
