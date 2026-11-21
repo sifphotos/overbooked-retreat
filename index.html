@@ -106,7 +106,7 @@ a:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; border-ra
 .note { font-size: 14px; color: var(--muted); }
 
 /* rooms */
-.rooms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.rooms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .room { background: var(--paper); border: 2px solid var(--ink); border-radius: 22px; box-shadow: 5px 5px 0 var(--ink); overflow: hidden; display: flex; flex-direction: column; }
 .room img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-bottom: 2px solid var(--ink); }
 .room-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
@@ -252,7 +252,7 @@ footer p { font-size: 13px; color: var(--muted); max-width: 46em; }
     <div class="section-head">
       <span class="hand">step two</span>
       <h2 id="rooms-title">Pick your room</h2>
-      <p>Prices are the same for either weekend. "Total" is the whole 2-night stay for one room with the resort charge and taxes added in. "Each" is that total split between 2 roommates.</p>
+      <p>Every room here has 2 queen beds, and prices are the same for either weekend. "Total" is the whole 2-night stay for one room with the resort charge and taxes added in. "Each" is that total split between 2 roommates.</p>
     </div>
     <div class="rooms">
 
@@ -271,20 +271,6 @@ footer p { font-size: 13px; color: var(--muted); max-width: 46em; }
       </article>
 
       <article class="room">
-        <img src="https://www.hilton.com/im/en/ATLOKQQ/20842842/atlokqq-traditional-fairway-1-king-01.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with one king bed and a view of the golf course" loading="lazy">
-        <div class="room-body">
-          <div class="room-top"><span class="hand vibe">sleepover energy</span><span class="flag">Best value</span></div>
-          <h3>1 King Bed, Resort View</h3>
-          <div class="feats"><span>One king</span><span>Golf view</span><span>Mini fridge</span></div>
-          <dl class="prices num">
-            <div><dt>Per night</dt><dd>$533</dd></div>
-            <div><dt>Total, 2 nights</dt><dd>$1,245</dd></div>
-            <div class="big"><dt>Each, split 2 ways</dt><dd>$622</dd></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="room">
         <img src="https://www.hilton.com/im/en/ATLOKQQ/23448419/atlokqq-superior-mtn-vistas-2-qn-02.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with two queen beds and big windows facing the mountains" loading="lazy">
         <div class="room-body">
           <div class="room-top"><span class="hand vibe">two beds, big views</span></div>
@@ -294,48 +280,6 @@ footer p { font-size: 13px; color: var(--muted); max-width: 46em; }
             <div><dt>Per night</dt><dd>$573</dd></div>
             <div><dt>Total, 2 nights</dt><dd>about $1,338</dd></div>
             <div class="big"><dt>Each, split 2 ways</dt><dd>$669</dd></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="room">
-        <img src="https://www.hilton.com/im/en/ATLOKQQ/22164412/cloudland-hotel-mclemore-guest-room-2-by-161-photography.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with one king bed facing the mountain view" loading="lazy">
-        <div class="room-body">
-          <div class="room-top"><span class="hand vibe">wake up to the valley</span></div>
-          <h3>1 King Bed, Superior Mountain View</h3>
-          <div class="feats"><span>One king</span><span>Mountain view</span></div>
-          <dl class="prices num">
-            <div><dt>Per night</dt><dd>$573</dd></div>
-            <div><dt>Total, 2 nights</dt><dd>about $1,338</dd></div>
-            <div class="big"><dt>Each, split 2 ways</dt><dd>$669</dd></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="room">
-        <img src="https://www.hilton.com/im/en/ATLOKQQ/20844093/atlokqq-dlx-balcony-fairway-1-king-01.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with one king bed and a private balcony over the golf course" loading="lazy">
-        <div class="room-body">
-          <div class="room-top"><span class="hand vibe">wine on the balcony</span></div>
-          <h3>1 King Bed, Resort View with Balcony</h3>
-          <div class="feats"><span>One king</span><span>Balcony</span><span>Golf view</span></div>
-          <dl class="prices num">
-            <div><dt>Per night</dt><dd>$573</dd></div>
-            <div><dt>Total, 2 nights</dt><dd>about $1,338</dd></div>
-            <div class="big"><dt>Each, split 2 ways</dt><dd>$669</dd></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="room">
-        <img src="https://www.hilton.com/im/en/ATLOKQQ/20842248/atlokqq-king-superior-balcony-mtn-view.jpg?impolicy=crop&amp;cw=4500&amp;ch=3000&amp;gravity=NorthWest&amp;xposition=0&amp;yposition=0&amp;rw=900&amp;rh=600" alt="Room with one king bed and a balcony looking out at the mountains" loading="lazy">
-        <div class="room-body">
-          <div class="room-top"><span class="hand vibe">main character suite-ish</span><span class="flag">Splurge</span></div>
-          <h3>1 King, Superior Mountain View with Balcony</h3>
-          <div class="feats"><span>One king</span><span>Balcony</span><span>Mountain view</span></div>
-          <dl class="prices num">
-            <div><dt>Per night</dt><dd>$613</dd></div>
-            <div><dt>Total, 2 nights</dt><dd>about $1,430</dd></div>
-            <div class="big"><dt>Each, split 2 ways</dt><dd>$715</dd></div>
           </dl>
         </div>
       </article>
